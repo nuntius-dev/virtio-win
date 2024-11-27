@@ -4,7 +4,7 @@ Este proyecto permite configurar y ejecutar una máquina virtual de Windows dent
 Por favor, lee todo el README antes de comenzar para asegurarte de que cumples con los requisitos y entiendes el proceso.
 Para tutoriales visita https://witmovil.com
 
-![Imagen de referencia](desk.jpg)
+![Imagen de referencia](desk.png)
 
 Requisitos
 Docker y Docker Compose instalados en tu máquina.
