@@ -1,0 +1,15 @@
+services:
+  libvirt:
+    restart: always
+    image: msjpq/windows-in-docker:latest
+    security_opt:
+      - apparmor=unconfined
+    environment:
+      TZ: "America/Bogota"  # tu zona horaria
+      DATA_DIR: "/data"  # Directorio para guardar datos
+    ports:
+      - 8081:8080  # Puerto para la interfaz gráfica cambie segun gustos o ocupados
+    volumes:
+      - /var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro
+      - "/home:/data"
+      command: /bin/bash -c "if [ ! -f /data/virtio-win.iso ]; then curl -L https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso -o /data/virtio-win.iso; else echo 'virtio-win.iso already exists'; fi"
